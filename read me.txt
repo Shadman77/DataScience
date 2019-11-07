@@ -1,0 +1,2 @@
+Use the venv for all the projects folders
+. ../venv/Scripts/activate          for gitbash
