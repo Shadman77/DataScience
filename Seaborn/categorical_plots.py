@@ -32,8 +32,33 @@ def boxPlot(tips):
 def violinPlot(tips):
     sns.violinplot(x='day', y='total_bill', data=tips)
     plt.show()
-    sns.violinplot(x='day', y='total_bill', data=tips, hue='smoker')
+    sns.violinplot(x='day', y='total_bill', data=tips, hue='sex')
     plt.show()
+    sns.violinplot(x='day', y='total_bill', data=tips, hue='smoker', split=True)
+    plt.show()
+
+def stripPlot(tips):
+    sns.stripplot(x='day', y='total_bill', data=tips, jitter=False)
+    plt.show()
+    sns.stripplot(x='day', y='total_bill', data=tips)
+    plt.show()
+    sns.stripplot(x='day', y='total_bill', data=tips, hue='sex', dodge=True)
+    plt.show()
+
+def swarmPlot(tips):
+    sns.swarmplot(x='day', y='total_bill', data=tips)
+    plt.show()
+    sns.violinplot(x='day', y='total_bill', data=tips)
+    sns.swarmplot(x='day', y='total_bill', data=tips, color='black')
+    plt.show()
+
+
+def factorPlot(tips):
+    sns.factorplot(x='day', y='total_bill', data=tips, kind='bar')
+    plt.show()
+    sns.factorplot(x='day', y='total_bill', data=tips, kind='box')
+    plt.show()
+
 
 def main():
     #Use Seaboarn built-in dataset and BDHousing dataset
@@ -50,12 +75,25 @@ def main():
     #countPlot(tips)
 
     #Box Plot
+    # Recommended for presentation since easier to understand for executives
     incrementIter('Box Plot')
     #boxPlot(tips)
 
     #Violin Plot
     incrementIter('Violin Plot')
-    violinPlot(tips)
+    #violinPlot(tips)
+
+    #Strip Plot
+    incrementIter('Strip Plot')
+    #stripPlot(tips)
+
+    #Swarm Plot
+    incrementIter('Swarm Plot')
+    #swarmPlot(tips)
+
+    #Factor Plot
+    incrementIter('Factor Plot')
+    factorPlot(tips)
 
 if __name__ == "__main__":
     main()
